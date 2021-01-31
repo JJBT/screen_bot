@@ -7,7 +7,10 @@ import os
 
 os.environ['DISPLAY'] = ':0'
 bot = telebot.TeleBot(Token)
-filename = '/home/vladimir/PycharmProjects/screen_bot/screen.png'
+
+path = os.path.split(os.path.abspath(__file))[0]
+filename = os.path.join(path, 'screen.png')
+# filename = '/home/vladimir/PycharmProjects/screen_bot/screen.png'
 
 def make_screenshot():
     image = ImageGrab.grab()
